@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://lv1lpuxnb81q"]
+
+[ext_resource type="PackedScene" uid="uid://d0mxkwlfxk7vt" path="res://Scenes/Personnage/player.tscn" id="1_rngn1"]
+
+[node name="TestPersonnageAnimation" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_rngn1")]
+position = Vector2(24, 24)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(24, 24)
+zoom = Vector2(5, 5)
