@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0mxkwlfxk7vt"]
+[gd_scene load_steps=6 format=3 uid="uid://d0mxkwlfxk7vt"]
 
 [ext_resource type="Texture2D" uid="uid://oyymllyh8gl5" path="res://kenney_pixel-platformer/Tilemap/tilemap-characters.png" id="1_500ca"]
 [ext_resource type="Script" path="res://Scenes/Personnage/Script/player.gd" id="1_evce1"]
@@ -7,18 +7,11 @@
 atlas = ExtResource("1_500ca")
 region = Rect2(0, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_khbpg"]
-atlas = ExtResource("1_500ca")
-region = Rect2(25, 0, 24, 24)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_nlhik"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mym3w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_khbpg")
 }],
 "loop": true,
 "name": &"Run",

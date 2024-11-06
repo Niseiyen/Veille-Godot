@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://lv1lpuxnb81q"]
 
-[ext_resource type="PackedScene" uid="uid://d0mxkwlfxk7vt" path="res://Scenes/Personnage/player.tscn" id="1_rngn1"]
+[ext_resource type="PackedScene" uid="uid://c5y7bl63b5sdh" path="res://Scenes/Personnage/playerWithoutScript.tscn" id="1_diewp"]
 
 [node name="TestPersonnageAnimation" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_rngn1")]
-position = Vector2(24, 24)
+[node name="Player" parent="." instance=ExtResource("1_diewp")]
+position = Vector2(28, 18)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(24, 24)
