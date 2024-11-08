@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7t08k8uteru"]
+
+[ext_resource type="Script" path="res://Scenes/ObjectReutilisable/Script/piece.gd" id="1_w5v4y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ke65"]
+size = Vector2(4, 4)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5hsic"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4d6h3"]
+specular_color = Color(0.996078, 0.835294, 0.0196078, 1)
+
+[node name="Piece" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_w5v4y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_0ke65")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+material = SubResource("CanvasItemMaterial_5hsic")
+position = Vector2(-1, 1)
+scale = Vector2(4, 4)
+texture = SubResource("CanvasTexture_4d6h3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

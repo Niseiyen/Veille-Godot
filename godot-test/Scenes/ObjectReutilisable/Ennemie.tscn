@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://2p2ew3sdgkkj"]
+
+[ext_resource type="Script" path="res://Scenes/ObjectReutilisable/Script/ennemie.gd" id="1_cu0ko"]
+[ext_resource type="PackedScene" uid="uid://chu1qdhjiw4kd" path="res://Scenes/ObjectReutilisable/kill_zone.tscn" id="2_2ak8p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_a614w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jft73"]
+size = Vector2(10, 10)
+
+[node name="Ennmie" type="Node2D"]
+script = ExtResource("1_cu0ko")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.301961, 0, 0, 1)
+position = Vector2(5.96046e-08, -5.96046e-08)
+scale = Vector2(10, 10)
+texture = SubResource("CanvasTexture_a614w")
+
+[node name="KillZone" parent="." instance=ExtResource("2_2ak8p")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+shape = SubResource("RectangleShape2D_jft73")
+
+[node name="RayCastDroite" type="RayCast2D" parent="."]
+target_position = Vector2(8, 0)
+
+[node name="RayCastGauche" type="RayCast2D" parent="."]
+target_position = Vector2(-8, 0)
