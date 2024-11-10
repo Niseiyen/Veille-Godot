@@ -1,33 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5y7bl63b5sdh"]
+[gd_scene load_steps=2 format=3 uid="uid://c5y7bl63b5sdh"]
 
-[ext_resource type="Texture2D" uid="uid://oyymllyh8gl5" path="res://kenney_pixel-platformer/Tilemap/tilemap-characters.png" id="2_qe62e"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mym3w"]
-atlas = ExtResource("2_qe62e")
-region = Rect2(0, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_khbpg"]
-atlas = ExtResource("2_qe62e")
-region = Rect2(25, 0, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nlhik"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mym3w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_khbpg")
-}],
-"loop": true,
-"name": &"Run",
-"speed": 5.0
-}]
+[sub_resource type="CanvasTexture" id="CanvasTexture_2bf1p"]
 
 [node name="PlayerWithoutScript" type="CharacterBody2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_nlhik")
-animation = &"Run"
-autoplay = "Run"
-frame_progress = 0.368925
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 3)
+scale = Vector2(12, 12)
+texture = SubResource("CanvasTexture_2bf1p")

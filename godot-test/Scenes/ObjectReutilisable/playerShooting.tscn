@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://duvbj3vyl3qeo"]
+
+[ext_resource type="Script" path="res://Scenes/ObjectReutilisable/Script/ShootingBehaviour.gd" id="1_m7pyt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vd71u"]
+size = Vector2(12, 12)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_l3bwd"]
+
+[node name="PlayerShooting" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.31089e-30, 1.42109e-14)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_vd71u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 1.19209e-07)
+scale = Vector2(12, 12)
+texture = SubResource("CanvasTexture_l3bwd")
+
+[node name="Gun" type="Sprite2D" parent="."]
+modulate = Color(0.168627, 0, 0.223529, 1)
+scale = Vector2(15, 2)
+texture = SubResource("CanvasTexture_l3bwd")
+offset = Vector2(0.3, 0)
+script = ExtResource("1_m7pyt")
+
+[node name="Marker2D" type="Marker2D" parent="Gun"]
+position = Vector2(0.907912, 0)

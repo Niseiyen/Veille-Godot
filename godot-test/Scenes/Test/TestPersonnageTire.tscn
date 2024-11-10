@@ -1,4 +1,16 @@
-[gd_scene format=3 uid="uid://dkma056r45jrb"]
+[gd_scene load_steps=3 format=3 uid="uid://dkma056r45jrb"]
+
+[ext_resource type="PackedScene" uid="uid://duvbj3vyl3qeo" path="res://Scenes/ObjectReutilisable/playerShooting.tscn" id="1_xg2po"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hy2e7"]
+distance = -52.0
 
 [node name="TestTire" type="Node2D"]
-position = Vector2(-1, 1)
+
+[node name="PlayerShooting" parent="." instance=ExtResource("1_xg2po")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_hy2e7")
