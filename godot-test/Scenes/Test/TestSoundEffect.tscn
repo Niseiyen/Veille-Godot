@@ -1,12 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://vvowwl1uvatp"]
+[gd_scene load_steps=7 format=3 uid="uid://c312jhvq3ku3v"]
 
-[ext_resource type="Texture2D" uid="uid://dprtfb2p3b4aq" path="res://kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_jmei7"]
-[ext_resource type="Texture2D" uid="uid://ckjjuufixp2s3" path="res://kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png" id="2_5imei"]
-[ext_resource type="PackedScene" uid="uid://d0mxkwlfxk7vt" path="res://Scenes/ObjectReutilisable/Player/player.tscn" id="3_k8va5"]
-[ext_resource type="PackedScene" uid="uid://chu1qdhjiw4kd" path="res://Scenes/ObjectReutilisable/kill_zone.tscn" id="4_i0q23"]
+[ext_resource type="Texture2D" uid="uid://dprtfb2p3b4aq" path="res://kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_8t042"]
+[ext_resource type="PackedScene" uid="uid://c4vnn5vtiiimh" path="res://Scenes/ObjectReutilisable/Player/playerWithSound.tscn" id="1_wpnkf"]
+[ext_resource type="Texture2D" uid="uid://ckjjuufixp2s3" path="res://kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png" id="2_xafet"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4rdwi"]
-texture = ExtResource("1_jmei7")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5njb"]
+texture = ExtResource("1_8t042")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
@@ -275,8 +274,8 @@ texture_region_size = Vector2i(18, 18)
 20:9/0 = 0
 21:9/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggngw"]
-texture = ExtResource("2_5imei")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wsqkm"]
+texture = ExtResource("2_xafet")
 texture_region_size = Vector2i(19, 18)
 0:0/0 = 0
 1:0/0 = 0
@@ -319,31 +318,22 @@ texture_region_size = Vector2i(19, 18)
 8:3/0 = 0
 9:3/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_gno7t"]
+[sub_resource type="TileSet" id="TileSet_2rk2l"]
 tile_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_4rdwi")
-sources/1 = SubResource("TileSetAtlasSource_ggngw")
+sources/0 = SubResource("TileSetAtlasSource_e5njb")
+sources/1 = SubResource("TileSetAtlasSource_wsqkm")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a8p3u"]
-distance = -90.0
+[node name="TestSoundEffect" type="Node2D"]
 
-[node name="TestLevel" type="Node2D"]
+[node name="Player" parent="." instance=ExtResource("1_wpnkf")]
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_gno7t")
+tile_set = SubResource("TileSet_2rk2l")
 format = 2
 layer_0/name = "Platofrm"
-layer_0/tile_data = PackedInt32Array(131071, 65536, 0, 65536, 131072, 0, 65537, 196608, 0)
+layer_0/tile_data = PackedInt32Array(131070, 131072, 0, 131071, 131072, 0, 65536, 131072, 0, 65537, 131072, 0, 65538, 131072, 0, 65539, 131072, 0, 65540, 131072, 0, 65541, 131072, 0, 65542, 131072, 0, 65543, 131072, 0, 131069, 65536, 0, 1, 589824, 1, -131068, 655360, 0, 6, 393216, 7, -65526, 458752, 7, 65544, 131072, 0, 65545, 131072, 0, 65546, 131072, 0, 65547, 131072, 0, 65548, 196608, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(54, 0)
 zoom = Vector2(3, 3)
-
-[node name="Player" parent="." instance=ExtResource("3_k8va5")]
-
-[node name="KillZone" parent="." instance=ExtResource("4_i0q23")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(4, 0)
-shape = SubResource("WorldBoundaryShape2D_a8p3u")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5y7bl63b5sdh"]
+
+[ext_resource type="Texture2D" uid="uid://bhtfacvl32dit" path="res://kenney_pixel-platformer/Tilemap/tilemap-characters_packed.png" id="1_jldfb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2b4o"]
+atlas = ExtResource("1_jldfb")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8030t"]
+atlas = ExtResource("1_jldfb")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_podfo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2b4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8030t")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="PlayerWithoutScript" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_podfo")
+animation = &"Walk"
+autoplay = "Walk"

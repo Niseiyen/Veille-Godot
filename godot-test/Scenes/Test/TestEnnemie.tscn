@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dprtfb2p3b4aq" path="res://kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_aw601"]
 [ext_resource type="Texture2D" uid="uid://ckjjuufixp2s3" path="res://kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png" id="2_hphh6"]
-[ext_resource type="PackedScene" uid="uid://d0mxkwlfxk7vt" path="res://Scenes/ObjectReutilisable/player.tscn" id="3_1dalg"]
+[ext_resource type="PackedScene" uid="uid://d0mxkwlfxk7vt" path="res://Scenes/ObjectReutilisable/Player/player.tscn" id="3_1dalg"]
 [ext_resource type="PackedScene" uid="uid://2p2ew3sdgkkj" path="res://Scenes/ObjectReutilisable/Ennemie.tscn" id="4_aepcx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vsqof"]

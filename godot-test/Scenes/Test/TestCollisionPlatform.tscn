@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dprtfb2p3b4aq" path="res://kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_blu0l"]
 [ext_resource type="Texture2D" uid="uid://ckjjuufixp2s3" path="res://kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png" id="2_8y44a"]
-[ext_resource type="PackedScene" uid="uid://d0mxkwlfxk7vt" path="res://Scenes/ObjectReutilisable/player.tscn" id="3_b0d72"]
+[ext_resource type="PackedScene" uid="uid://d0mxkwlfxk7vt" path="res://Scenes/ObjectReutilisable/Player/player.tscn" id="3_b0d72"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rojeu"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hr00"]
 texture = ExtResource("1_blu0l")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
@@ -274,7 +274,7 @@ texture_region_size = Vector2i(18, 18)
 20:9/0 = 0
 21:9/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f3s0d"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ivecb"]
 texture = ExtResource("2_8y44a")
 texture_region_size = Vector2i(19, 18)
 0:0/0 = 0
@@ -321,8 +321,8 @@ texture_region_size = Vector2i(19, 18)
 [sub_resource type="TileSet" id="TileSet_gno7t"]
 tile_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_rojeu")
-sources/1 = SubResource("TileSetAtlasSource_f3s0d")
+sources/0 = SubResource("TileSetAtlasSource_0hr00")
+sources/1 = SubResource("TileSetAtlasSource_ivecb")
 
 [node name="TestLevel" type="Node2D"]
 
