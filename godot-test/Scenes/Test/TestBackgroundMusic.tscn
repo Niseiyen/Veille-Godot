@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://diipnmsastqkb"]
+
+[ext_resource type="Texture2D" uid="uid://uq7p43raxvre" path="res://icon.svg" id="1_lg42i"]
+[ext_resource type="AudioStream" uid="uid://cowdc1xc6c0ft" path="res://Scenes/Sound/background-music.mp3" id="2_re2x1"]
+
+[node name="TestSoundEffect" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(640, 308)
+texture = ExtResource("1_lg42i")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_re2x1")
+autoplay = true

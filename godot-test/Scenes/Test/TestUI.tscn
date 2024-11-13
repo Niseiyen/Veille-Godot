@@ -1,9 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://cewa54cwwl7st"]
+[gd_scene load_steps=3 format=3 uid="uid://cewa54cwwl7st"]
 
+[ext_resource type="Script" path="res://Scenes/ObjectReutilisable/Script/Menu.gd" id="1_livrf"]
 [ext_resource type="PackedScene" uid="uid://dw5lay8yhh0sa" path="res://Scenes/ObjectReutilisable/UI/hearts_container.tscn" id="1_smoss"]
 
 [node name="TestUI" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HeartsContainer" parent="CanvasLayer" instance=ExtResource("1_smoss")]
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_livrf")
+
+[node name="HeartsContainer" parent="CanvasLayer/Control" instance=ExtResource("1_smoss")]
+offset_right = 144.0
+scale = Vector2(1.52, 1.52)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+offset_left = 344.0
+offset_top = 154.0
+offset_right = 489.0
+offset_bottom = 255.0
+scale = Vector2(3.56, 3.56)
+
+[node name="Changer de scene" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "Changer de scène
+"
+
+[node name="Changer de scene2" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "Changer de scène
+"
+
+[node name="Jouer" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "Jouer
+"
+
+[node name="Quitter" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "Quitter"
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Changer de scene" to="CanvasLayer/Control" method="_on_changer_de_scene_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Changer de scene2" to="CanvasLayer/Control" method="_on_changer_de_scene_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Jouer" to="CanvasLayer/Control" method="_on_jouer_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Quitter" to="CanvasLayer/Control" method="_on_quitter_pressed"]
